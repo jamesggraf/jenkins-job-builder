@@ -1,8 +1,8 @@
 README
 ======
-NOTE: This is a modified version of the Jenkins Job Builder. It adds two pull requests
-that add folder support that have yet to be merged into the project's release
-branches.
+NOTE: This is a modified version of the Jenkins Job Builder. It DISABLES SSL
+verification and it adds two pull requests that add folder support that have
+yet to be merged into the project's release branches.
 
 Folder Creation PR: https://review.openstack.org/#/c/189697/
 

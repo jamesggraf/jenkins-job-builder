@@ -13,6 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import ssl
+
 import argparse
 import fnmatch
 import io
@@ -159,6 +161,16 @@ def create_parser():
 
 
 def main(argv=None):
+
+    # Disable SSL verification
+    try:
+        _create_unverified_https_context = ssl._create_unverified_context
+    except AttributeError:
+        # Legacy Python that doesn't verify HTTPS certificates by default
+        pass
+    else:
+        # Handle target environment that doesn't support HTTPS verification
+        ssl._create_default_https_context = _create_unverified_https_context
 
     # We default argv to None and assign to sys.argv[1:] below because having
     # an argument default value be a mutable type in Python is a gotcha. See
