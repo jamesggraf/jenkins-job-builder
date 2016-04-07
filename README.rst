@@ -1,5 +1,12 @@
 README
 ======
+NOTE: This is a modified version of the Jenkins Job Builder. It adds two pull requests
+that add folder support that have yet to be merged into the project's release
+branches.
+
+Folder Creation PR: https://review.openstack.org/#/c/189697/
+
+Folder Assignment PR: https://review.openstack.org/#/c/134307/
 
 Jenkins Job Builder takes simple descriptions of Jenkins_ jobs in YAML_ or JSON_
 format and uses them to configure Jenkins. You can keep your job descriptions in
