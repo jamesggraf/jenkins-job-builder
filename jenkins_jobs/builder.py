@@ -370,6 +370,7 @@ class Builder(object):
                         raise
                     continue
 
+                logger.info("Outputting to path %s", os.path.normpath(job.name))
                 output_fn = os.path.join(output, os.path.normpath(job.name))
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:

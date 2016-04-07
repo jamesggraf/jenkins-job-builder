@@ -6,6 +6,7 @@
 .testrepository
 .tox
 .idea
+*.iml
 AUTHORS
 build/*
 ChangeLog
