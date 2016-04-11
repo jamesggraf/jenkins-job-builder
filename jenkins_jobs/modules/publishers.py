@@ -2742,6 +2742,22 @@ def artifactory(parser, xml_parent, data):
     XML.SubElement(details, 'snapshotsRepositoryKey').text = data.get(
         'snapshot-repo-key', '')
 
+    deployReleaseRepository = XML.SubElement(details, 'deployReleaseRepository')
+    XML.SubElement(deployReleaseRepository, 'keyFromText').text = data.get(
+        'deploy-release-repo-key', '')
+    XML.SubElement(deployReleaseRepository, 'keyFromSelect').text = data.get(
+        'deploy-release-repo-key', '')
+    XML.SubElement(deployReleaseRepository, 'dynamicMode').text = str(
+        data.get('deploy-release-dynamic-mode', False)).lower()
+
+    deploySnapshotRepository = XML.SubElement(details, 'deploySnapshotRepository')
+    XML.SubElement(deploySnapshotRepository, 'keyFromText').text = data.get(
+        'deploy-snapshot-repo-key', '')
+    XML.SubElement(deploySnapshotRepository, 'keyFromSelect').text = data.get(
+        'deploy-snapshot-repo-key', '')
+    XML.SubElement(deploySnapshotRepository, 'dynamicMode').text = str(
+        data.get('deploy-snapshot-dynamic-mode', False)).lower()
+
     plugin = XML.SubElement(details, 'stagingPlugin')
     XML.SubElement(plugin, 'pluginName').text = 'None'
 
